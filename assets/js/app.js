@@ -52,3 +52,33 @@ function createArr(arr){
 } 
 
 createArr(stdArr);
+
+
+function onstdSubmit(eve){ 
+      eve.preventDefault();
+    let newObj ={ 
+          fname:fnameControl.value ,
+          lname:lnameControl.value ,
+          email:emailControl.value ,
+          contact:contactControl.value,
+          stdId:Date.now().toString 
+        } 
+
+   stdArr.push(newObj) ;
+
+   let tr = document.createElement('tr'); 
+   tr.id =newObj.stdId;
+   tr.innerHTML = ` <td>${stdArr.length}</td>
+                            <td>${newObj.fname} ${newObj.lname}</td>
+                            <td>${newObj.email}</td>
+                            <td>${newObj.contact}</td>
+                            <td><i onclick="onEdit(this)" class="fa-regular fa-pen-to-square text-primary"></i></td>
+                            <td><i onclick="onRemove(this)" class="fa-solid fa-trash-can text-danger remove"></i></td>
+                       `
+   stdContainer.append(tr);
+
+}  
+
+
+stdForm.addEventListener('submit',onstdSubmit);
+updateStd.addEventListener('click',onUpdate);
