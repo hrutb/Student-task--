@@ -82,13 +82,13 @@ function onstdSubmit(eve){
 
 
 function disabled(){ 
-      let allTr = [...document.querySelectorAll('tr')]; 
+      let allTr = [...document.querySelectorAll('.remove')]; 
       allTr.forEach(ele=>ele.lastElementChild.removeAttribute('onclick'))
 }  
 
 function Enabled(){
-       let allTr = [...document.querySelectorAll('#stdContainer tr')]; 
-      allTr.forEach(ele=>ele.lastElementChild.setAttribute('onclick','onRemove(this)'))
+       let allTr = [...document.querySelectorAll('.remove')]; 
+      allTr.forEach(ele=>ele.lastElementChild.setAttribute('onclick', 'onRemove(this)'))
 }
 
 
@@ -138,15 +138,20 @@ function onUpdate(){
   stdArr[getIndex] =updateObj;  
  
   let tr =document.getElementById(update).children ;
-  tr[1]=`${updateObj.fname} ${updateObj.lname}` ;
-  tr[2] =updateObj.email ;
-  tr[3]=updateObj.contact; 
+  tr[1].innerText =`${updateObj.fname} ${updateObj.lname}` ;
+  tr[2].innerText =updateObj.email ;
+  tr[3].innerText =updateObj.contact; 
 
-   addStd.classLit.remove('d-none');
+   addStd.classList.remove('d-none');
    updateStd.classList.add('d-none');
 
+
+
+
+
+
    stdForm.reset()
- Enabled();
+   Enabled();
 }
 
 
