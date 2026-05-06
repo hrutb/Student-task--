@@ -32,13 +32,13 @@
                     <label for="lname" class="sr-only">lname</label>
                     <input type="text" class="form-control mb-3" id="lname" placeholder="Enter last name....">
                     <label for="email" class="sr-only">email</label>
-                    <input type="text" class="form-control mb-3" id="email" placeholder="Enter email...."> 
+                    <input required  type="text" class="form-control mb-3" id="email" placeholder="Enter email...."> 
                     <label for="contact" class="sr-only">contact</label>
-                    <input type="text" class="form-control mb-3" id="contact" placeholder="Enter contact number....">    
+                    <input required type="text" class="form-control mb-3" id="contact" placeholder="Enter contact number....">    
                 </div>
 
-                 <button id="addTodo"  class="btn btn-block btn-outline-primary">Add Todo</button>
-                 <button id="updateTodo"  class="btn btn-block btn-outline-primary d-none"></button>
+                 <button id="addStd"  class="btn btn-block btn-outline-primary">Add Student</button>
+                 <button id="updateStd" type="button" class="btn btn-block btn-outline-primary d-none">update Student</button>
             </form>
             </div>
          </div>
@@ -47,20 +47,27 @@
      <div class="col-md-6 mt-5"> 
          <div class="card">
            <div class="card-body">
-               <table class="table-bordered">
+               <table class="table table-bordered">
                      <thead>
                         <tr>
                             <th>Sr.no</th>
                             <th>Full Name</th>  
                             <th>Email</th>
-                            <th></th>   
-
-
-
-
-
+                            <th>Contact</th>
+                            <th>Edit</th>
+                            <th>Delete</th> 
                         </tr>
                      </thead>
+                     <tbody id="stdContainer">
+                        <!-- <tr>
+                            <td>1</td>
+                            <td>rahul raj</td>
+                            <td>raj@gmail.com</td>
+                            <td>123344</td>
+                            <td></td>
+                            <td></td>
+                        </tr> -->
+                     </tbody>
                </table>
            </div>
          </div>
