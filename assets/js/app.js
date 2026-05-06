@@ -80,5 +80,35 @@ function onstdSubmit(eve){
 }  
 
 
+
+function disabled(){ 
+      let allTr = [...document.querySelectorAll('tr')]; 
+      allTr.forEach(ele=>ele.lastElementChild.removeAttribute('onclick'))
+}  
+
+function Enabled(){
+       let allTr = [...document.querySelectorAll('#stdContainer tr')]; 
+      allTr.forEach(ele=>ele.lastElementChild.setAttribute('onclick','onRemove(this)'))
+}
+
+
+
+function onRemove(ele){ 
+      let remove = ele.closest('tr').id ;
+      let getindex =stdArr.findIndex(ele=>ele.stdId===remove); 
+
+   stdArr.splice(getindex,1); 
+   ele.closest('tr').remove(); 
+
+let alltr= [...document.querySelectorAll('#stdContainer tr')]; 
+ alltr.forEach((ele,i)=>ele.firstElementChild.innerText=i+1)
+
+}
+
+
+
+
+
+
 stdForm.addEventListener('submit',onstdSubmit);
 updateStd.addEventListener('click',onUpdate);
