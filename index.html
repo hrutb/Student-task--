@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"  
+     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ 
+     <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+      <i class="fa-solid fa-bars fa-2x openSidebar" id="openSidebar"></i>
+      <div class="overlay" id="overlay"></div>  
+       <div class="sidebar" id="sidebar">
+         
+       </div>
+
+  <div class="container"> 
+    <div class="row">
+       <div class="col-md-6 mt-5"> 
+         <div class="card">
+            <div class="card-body"> 
+                <form action="" id="stdForm">
+                  <div class="form-group">
+                    <label for="fname" class="sr-only">fname</label>
+                    <input type="text" class="form-control mb-3" id="fname" placeholder="Enter first name...."> 
+                    <label for="lname" class="sr-only">lname</label>
+                    <input type="text" class="form-control mb-3" id="lname" placeholder="Enter last name....">
+                    <label for="email" class="sr-only">email</label>
+                    <input type="text" class="form-control mb-3" id="email" placeholder="Enter email...."> 
+                    <label for="contact" class="sr-only">contact</label>
+                    <input type="text" class="form-control mb-3" id="contact" placeholder="Enter contact number....">    
+                </div>
+
+                 <button id="addTodo"  class="btn btn-block btn-outline-primary">Add Todo</button>
+                 <button id="updateTodo"  class="btn btn-block btn-outline-primary d-none"></button>
+            </form>
+            </div>
+         </div>
+       </div>
+
+     <div class="col-md-6 mt-5"> 
+         <div class="card">
+           <div class="card-body">
+               <table class="table-bordered">
+                     <thead>
+                        <tr>
+                            <th>Sr.no</th>
+                            <th>Full Name</th>  
+                            <th>Email</th>
+                            <th></th>   
+
+
+
+
+
+                        </tr>
+                     </thead>
+               </table>
+           </div>
+         </div>
+     </div>
+
+     </div>
+  </div> 
+
+
+
+
+
+    <script src="./assets/js/app.js"></script>
+</body>
+</html>
