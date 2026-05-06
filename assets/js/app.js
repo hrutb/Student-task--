@@ -103,8 +103,51 @@ function onRemove(ele){
 let alltr= [...document.querySelectorAll('#stdContainer tr')]; 
  alltr.forEach((ele,i)=>ele.firstElementChild.innerText=i+1)
 
+//  stdForm.reset();
 }
 
+ let editId
+function onEdit(ele){
+     disabled();
+    editId=ele.closest('tr').id ;
+     let editObj= stdArr.find(ele=>ele.stdId===editId); 
+          fnameControl.value   =editObj.fname; 
+          lnameControl.value   =editObj.lname ;
+          emailControl.value   =editObj.email ; 
+          contactControl.value = editObj.contact;
+        
+   addStd.classList.add('d-none');
+   updateStd.classList.remove('d-none');
+
+}
+
+
+
+function onUpdate(){ 
+ let update = editId; 
+ 
+ let updateObj={ 
+          fname:fnameControl.value ,
+          lname:lnameControl.value ,
+          email:emailControl.value ,
+          contact:contactControl.value,
+          stdId:update 
+    }  
+  let getIndex= stdArr.findIndex(ele=>ele.stdId===update);
+
+  stdArr[getIndex] =updateObj;  
+ 
+  let tr =document.getElementById(update).children ;
+  tr[1]=`${updateObj.fname} ${updateObj.lname}` ;
+  tr[2] =updateObj.email ;
+  tr[3]=updateObj.contact; 
+
+   addStd.classLit.remove('d-none');
+   updateStd.classList.add('d-none');
+
+   stdForm.reset()
+ Enabled();
+}
 
 
 
